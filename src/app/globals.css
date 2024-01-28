@@ -1,0 +1,200 @@
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
+@layer tailwind {
+  @tailwind base;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100vw !important;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  color: black !important;
+  
+}
+
+section {
+  flex: 1;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+  /* padding-right: 2rem;
+  padding-left: 2rem; */
+}
+
+.title {
+  @apply sm:text-2xl text-xl font-semibold mb-2;
+}
+
+@media screen and (max-width:768px) {
+
+  .active_sidebar {
+    overflow-y: hidden;
+  }
+
+  .active_sidebar aside.main_sidebar {
+    z-index: 100;
+    left: 0;
+    border: none;
+  }
+
+  .overlay {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+    z-index: 15;
+    background-color: #0005;
+    backdrop-filter: blur(10px);
+    visibility: hidden;
+    transition: .3s ease;
+  }
+
+  .active_sidebar .overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width:480px) {
+  .container {
+    padding: 0 10px !important;
+  }
+}
+
+section {
+  @apply h-full p-4;
+}
+
+section[role='dialog'] {
+  @apply m-4;
+}
+
+.text {
+  @apply text-[12px] sm:text-[15px];
+}
+
+
+table {
+  @apply w-full mt-2 overflow-hidden shadow-md bg-gray-100 !rounded-md;
+}
+
+table tbody tr:nth-child(2n-1) {
+  @apply bg-gray-200;
+}
+
+table tbody tr {
+  @apply border-b border-gray-300;
+}
+
+table th {
+  @apply px-6 py-3 font-medium text-gray-900 whitespace-nowrap;
+}
+
+.info_table table tr,
+.event_table table tr td,
+.event_table table tr th,
+table tr td,
+table tr th {
+  @apply px-6 py-3;
+}
+
+div[data-slot="input-wrapper"] {
+  @apply bg-light-1 border border-gray-300 text-gray-900 sm:text-sm rounded-md outline-none focus-within:ring-1 focus-within:ring-blue-400 block w-full p-2.5;
+}
+
+/* form input:not(div[data-slot="input-wrapper"] input) {
+  @apply bg-light-1 border border-gray-300 text-gray-900 sm:text-sm rounded-md outline-none focus:ring-1 focus:ring-blue-400 block w-full p-2.5;
+} */
+
+form label {
+  @apply block mb-1 text-sm font-medium text-gray-900;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.chip {
+  @apply text-blue-600 border-blue-600 text-xs font-medium py-0.5 inline-block rounded border;
+}
+
+.chip.a {
+  @apply bg-green-100 text-green-600 border-green-400;
+}
+
+.chip.p {
+  @apply bg-yellow-100 text-yellow-600 border-yellow-400;
+}
+
+.chip.r {
+  @apply bg-red-100 !text-red-600 border-red-400;
+}
+
+button.size-sm{
+  @apply px-4 py-1.5 sm:text-sm text-xs;
+}
+
+
+.mantine-Modal-overlay	{
+  backdrop-filter: blur(6px) !important;
+}
+
+.event_table .mantine-Input-wrapper.mantine-Select-wrapper{
+  --input-height-sm: auto;
+}
+
+.event_table .mantine-Input-input.mantine-Select-input{
+  @apply text-xs text-center py-0.5 w-[120px];
+}
+
+.chip.a .mantine-Input-input.mantine-Select-input{
+  @apply bg-green-100 text-green-600 border-green-400;
+}
+
+.chip.p .mantine-Input-input.mantine-Select-input{
+  @apply bg-yellow-100 text-yellow-600 border-yellow-400;
+}
+
+.chip.r .mantine-Input-input.mantine-Select-input{
+  @apply bg-red-100 !text-red-600 border-red-400;
+}
+
+.mantine-LoadingOverlay-overlay,
+.mantine-LoadingOverlay-root
+{
+@apply h-screen w-screen !fixed !top-0 left-0;
+}
+
+section{
+  background: white;
+  width: 100%;
+}
+
+img{
+  width: auto;
+  height: auto;
+}
